@@ -1,97 +1,97 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>线稿收音机 · 黑白轮廓</title>
-    <style>
+<！DOCTYPE html>
+<超文本标记语言 朗="zh-CN">
+<头>
+    <元 字符集="UTF-8">
+    <元 姓名="视口" 内容="宽度=设备宽度，初始比例=1.0，用户可缩放=是，视口适合=覆盖">
+    <标题>线稿收音机 · 黑白轮廓</标题>
+    <风格>
         * {
-            margin: 0;
+            边缘: 0;
             padding: 0;
-            box-sizing: border-box;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
+            箱体尺寸: 边框框;
+            用户选择: 没有一个;
+            -webkit-tap-highlight-color: 透明的;
         }
 
-        body {
-            background: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Courier New', 'Segoe UI', monospace;
-            padding: 12px;
+        身体 {
+            背景：#ffffff；
+            最小高度: 100vh;
+            显示: 弯曲;
+            对齐项目: 中心;
+            justify-content: 中心;
+            字体系列: '新快递', 'Segoe UI', 等宽;
+            padding: 12PX;
         }
 
         /* 收音机主体 — 纯黑白边框勾勒 */
-        .radio {
-            max-width: 420px;
-            width: 100%;
-            background: white;
-            border: 3px solid black;
-            border-radius: 32px;
-            padding: 20px 18px 24px;
-            box-shadow: none;
-            transition: none;
+        .收音机 {
+            最大宽度: 420PX;
+            宽度: 100%;
+            背景: 白色的;
+            边境: 3PX 固体 黑色的;
+            边界半径: 32PX;
+            padding: 20PX 18PX 24PX;
+            箱形阴影: 没有一个;
+            过渡: 没有一个;
         }
 
         /* 电源关闭时变淡 */
-        .radio.power-off {
-            opacity: 0.5;
+        .收音机.断电 {
+            不透明度: 0.5;
         }
-        .radio.power-off .knob,
-        .radio.power-off .radio-btn {
-            pointer-events: none;
+        .收音机.断电 .旋钮,
+        .收音机.断电 .radio-btn {
+            指针事件: 没有一个;
         }
 
         /* 喇叭网 — 网格点阵 */
-        .speaker-grille {
-            border: 2px solid black;
-            border-radius: 40px;
-            padding: 12px 10px;
-            margin-bottom: 20px;
+        .扬声器格栅 {
+            边境: 2PX 固体 黑色的;
+            边界半径: 40PX;
+            padding: 12PX 10PX;
+            底边距: 20PX;
         }
         .grille-pattern {
-            display: flex;
+            显示: 弯曲;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 4px;
+            justify-content: 中心;
+            gap: 4PX;
         }
         .grille-pattern span {
-            display: inline-block;
-            width: 5px;
-            height: 5px;
-            background: black;
-            border-radius: 50%;
+            显示: inline-block;
+            宽度: 5PX;
+            height: 5PX;
+            背景: 黑色的;
+            边界半径: 50%;
         }
 
         /* 刻度盘区域 */
         .dial-section {
-            border: 2px solid black;
-            border-radius: 50px;
-            padding: 14px 12px 10px;
-            margin-bottom: 18px;
+            边境: 2PX 固体 黑色的;
+            边界半径: 50PX;
+            padding: 14PX 12PX 10PX;
+            底边距: 18PX;
         }
         .dial-top {
-            display: flex;
+            显示: 弯曲;
             justify-content: space-between;
-            font-size: 11px;
+            font-size: 11PX;
             font-weight: bold;
-            border-bottom: 1px solid black;
-            padding-bottom: 6px;
-            margin-bottom: 12px;
+            border-bottom: 1PX 固体 黑色的;
+            padding-bottom: 6PX;
+            底边距: 12PX;
         }
         .frequency-badge {
-            font-family: monospace;
-            border: 1px solid black;
-            padding: 2px 8px;
-            border-radius: 20px;
+            字体系列: 等宽;
+            边境: 1PX 固体 黑色的;
+            padding: 2PX 8PX;
+            边界半径: 20PX;
         }
         .dial-scale {
             position: relative;
-            margin: 12px 0 8px;
-            background: white;
-            border-top: 1px solid black;
+            边缘: 12PX 0 8PX;
+            背景: 白色的;
+            border-top: 1PX 固体 黑色的;
             border-bottom: 1px solid black;
             height: 48px;
         }
@@ -465,9 +465,9 @@
         }
         function powerOff() {
             if (!isPowerOn) return;
-            isPowerOn = false;
-            radioBox.classList.add('power-off');
-            powerLed.classList.remove('on');
+>isPowerOn = false;
+超文本标记语言radioBox.classList.add('power-off');
+<！DOCTYPE 超文本标记语言>powerLed.classList.remove('on');
             playClick(440, 0.18, 0.2);
             stopCurrentSound();
         }
@@ -497,59 +497,59 @@
             if (!isPowerOn) return;
             idx = Math.min(stations.length-1, Math.max(0, idx));
             if (idx === currentStationIdx && isPlaying) return;
-            currentStationIdx = idx;
+            currentStationIdx = IDX;
             updateUIForStation(currentStationIdx);
             playClick(720, 0.05, 0.1);
-            if (isPlaying) startStationSound(stations[currentStationIdx].type);
-            if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(10);
+            如果 (IsPlaying) startStationSound(车站[currentStationIdx].类型);
+            如果 (窗户.领航员 && 窗户.领航员.振动) 窗户.领航员.振动(10);
         }
-        function nextChannel() { setChannel(currentStationIdx + 1); }
-        function prevChannel() { setChannel(currentStationIdx - 1); }
+        功能 nextChannel() { setChannel(currentStationIdx+1); }
+        功能 prevChannel() { setChannel(currentStationIdx - 1); }
 
-        function setVolume(val) {
-            let vol = Math.min(1, Math.max(0, parseFloat(val)));
-            currentVolume = vol;
-            if (currentGain) currentGain.gain.value = vol;
-            volumeSlider.value = vol * 100;
-        }
+        功能 setVolume(Val) {
+            让Vol=数学.最小值(1, 数学.最大值(0, parseFloat(Val)));
+            currentVolume=
+            
+            
+        
 
-        // 旋钮交互 (简化, 轻触加减)
-        let tuningStep = 0;
-        volumeKnob.addEventListener('click', () => { if(isPowerOn){ let newVol = Math.min(1, currentVolume + 0.05); setVolume(newVol); playClick(600,0.03,0.08); } });
-        volumeKnob.addEventListener('contextmenu', (e) => { e.preventDefault(); if(isPowerOn){ let newVol = Math.max(0, currentVolume - 0.05); setVolume(newVol); playClick(400,0.03,0.08); } });
-        tuningKnob.addEventListener('click', () => { if(isPowerOn){ let next = (currentStationIdx + 1) % stations.length; setChannel(next); } });
-        tuningKnob.addEventListener('contextmenu', (e) => { e.preventDefault(); if(isPowerOn){ let prev = (currentStationIdx - 1 + stations.length) % stations.length; setChannel(prev); } });
+        
+        
+        
+        
+        tuningKnob.addEventListener('单击', () => { 如果(isPowerOn){ 让 下一个 = (currentStationIdx + 1) % 车站.length; setChannel(下一个); } });
+tuningKnob.addEventListener('contextmenu'，(e)=>{e.preventDefault()；如果(isPowerOn){让上一个=(currentStationIdx-1+stations.length)%stations.length；setChannel(prev)；}})；
 
-        // 音量条
-        volumeSlider.addEventListener('input', (e) => setVolume(e.target.value / 100));
+        //音量条
+volumeSlider.addEventListener('输入'，(e)=>setVolume(e.目标.价值/100))；
 
         // 按钮事件
-        powerBtn.addEventListener('click', togglePower);
-        playPauseBtn.addEventListener('click', togglePlay);
-        prevChanBtn.addEventListener('click', prevChannel);
-        nextChanBtn.addEventListener('click', nextChannel);
+powerBtn.addEventListener('单击'，togglePower)；
+playPauseBtn.addEventListener('单击'，togglePlay)；
+prevChanBtn.addEventListener('单击'，prevChannel)；
+nextChanBtn.addEventListener('单击'，nextChannel)；
 
         // 生成喇叭网格
-        const grilleContainer = document.getElementById('grille');
-        if (grilleContainer) {
-            for (let i=0; i<180; i++) { let dot = document.createElement('span'); grilleContainer.appendChild(dot); }
+Const格栅容器=文件.getElementById('格栅')；
+        如果 (格栅容器) {
+为(让我=0；我<180；我++){让点=文件.createElement('span')；格栅容器.appendChild(点)；}
         }
 
-        function firstTouch() {
-            if (!audioCtx) initAudio();
-            if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
-            document.body.removeEventListener('touchstart', firstTouch);
-            document.body.removeEventListener('click', firstTouch);
+功能FirstTouch(){
+如果(！audioCtx)initAudio()；
+如果(audioCtx&&audioCtx.状态==='已暂停')audioCtx.简历()；
+文件.身体.removeEventListener('touchstart'，FirstTouch)；
+文件.身体.removeEventListener('单击'，FirstTouch)；
         }
-        document.body.addEventListener('touchstart', firstTouch);
-        document.body.addEventListener('click', firstTouch);
+文件.身体.addEventListener('touchstart'，FirstTouch)；
+文件.身体.addEventListener('单击'，FirstTouch)；
 
-        updateUIForStation(currentStationIdx);
-        setVolume(0.65);
-        powerLed.classList.remove('on');
-        radioBox.classList.add('power-off');
-        isPowerOn = false;
-    })();
-</script>
-</body>
-    </html>
+updateUIForStation(currentStationIdx)；
+setVolume(0.65)；
+有动力的.classList。移除('开')；
+收音机箱.classList。添加('断电')；
+isPowerOn=假的；
+    
+</脚本>
+</身体>
+    </超文本标记语言>
